@@ -1,0 +1,43 @@
+.green{
+    background-color: green;
+    width: 60px;
+    height: 60px;
+    font-family: 'Oswald', sans-serif;
+    border: 1px solid white;
+}
+
+.red{
+    background-color: red;
+    width: 60px;
+    height: 60px;
+    font-family: 'Oswald', sans-serif;
+    border: 1px solid white;
+
+}
+
+.yCoordinate{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-right: 10px;
+    padding-bottom: 8px;
+}
+
+.container h3{
+    font-family: 'Oswald', sans-serif;
+    font-size: x-large;
+    padding-bottom: 5px;
+
+}
+#myHeader{
+    font-family: 'Oswald', sans-serif;
+
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+button{
+    font-family: 'Oswald', sans-serif;
+
+}

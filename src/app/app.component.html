@@ -1,0 +1,88 @@
+<div style="padding-bottom: 20px;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- <p style="text-align: center;">test</p> -->
+      <a class="navbar-brand" id="myHeader" style="margin : 0 auto" href="#">English Central Practical Exam</a>
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div style="display: flex;">
+        <mat-card style="display: flex;">
+          <div class="yCoordinate">
+            <p style="padding-bottom: 3px;" *ngFor="let item of yCoordinates">{{item}}</p>
+          </div>
+   
+          <div style="display: inline;">
+          
+            <div>
+              <button  class="btn" [ngClass]="{'red' : item.set == false , 'green' : item.set == true}" (click)="buttonToggle(item.x,item.y)"  *ngFor="let item of filterItemsOfType(4)">{{item.content}}</button>
+            </div>
+            <div>
+              <button class="btn" [ngClass]="{'red' : item.set == false , 'green' : item.set == true}" (click)="buttonToggle(item.x, item.y)" *ngFor="let item of filterItemsOfType(3)">{{item.content}}</button>
+            </div>
+            <div>
+              <button class="btn" [ngClass]="{'red' : item.set == false , 'green' : item.set == true}" (click)="buttonToggle(item.x,item.y)" *ngFor="let item of filterItemsOfType(2)">{{item.content}}</button>
+            </div>
+            <div>
+              <button class="btn" [ngClass]="{'red' : item.set == false , 'green' : item.set == true}" (click)="buttonToggle(item.x,item.y)" *ngFor="let item of filterItemsOfType(1)">{{item.content}}</button>
+            </div>
+            <div style="display: flex; justify-content: space-around;">
+              <p  *ngFor="let item of xCoordinates">{{item}}</p>
+            </div>
+          </div>
+        </mat-card>
+    
+      
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+        <mat-card>
+          <h3 class="mt-2 mb-2">Manual Override</h3>
+
+          <div style="display: flex;">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>X</mat-label>
+              <input [(ngModel)]="manualXCoordinate" matInput>
+            </mat-form-field>
+          
+          </div>
+          <div style="display: flex;">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Y</mat-label>
+              <input placeholder="" [(ngModel)]="manualYCoordinate" matInput>
+            </mat-form-field>
+          </div>
+          <div style="display: flex;">
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedState" (ngModelChange)="setValue()">
+              <mat-radio-button  style="margin-right: 8px;"  value="1">ON</mat-radio-button>
+              <mat-radio-button   value="0">OFF</mat-radio-button>
+            </mat-radio-group>
+          </div>
+  
+         <div style="max-width: 100%; padding-top: 20px; display: flex; justify-content: space-between; ">
+           <button (click)="setCoordinate()" class="btn btn-warning">Confirm</button>
+             <button  class="btn btn-warning" (click)="resetButtons()"> RESET</button>
+
+          </div> 
+        </mat-card>
+
+
+    </div>
+  </div>
+
+  <div style="padding-top:10px;">
+  </div>
+
+
+  
+</div>
+
+
+
+
