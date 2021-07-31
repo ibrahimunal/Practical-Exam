@@ -63,8 +63,10 @@ export class AppComponent {
     if(manualButtonIndex != -1 ){
       if(this.selectedState == 1){
         this.buttonList[manualButtonIndex].set=true;
+        this.buttonList[manualButtonIndex].content ="ON";
       }else{
         this.buttonList[manualButtonIndex].set=false;
+        this.buttonList[manualButtonIndex].content ="OFF";
       }
     }else{
       alert("Range must be between 1 and 4 !! ")
@@ -78,6 +80,6 @@ export class AppComponent {
   }
 
   resetButtons(){
-    this.buttonList.forEach(item=>{item.set=false;})
+    this.buttonList.forEach(item=>{item.set=false , item.content = "OFF"})
   }
 }
